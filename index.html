@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional construction services and equipment rental for infrastructure, land preparation, and building projects.">
+    <meta name="keywords" content="construction, equipment rental, excavator, infrastructure, land preparation">
+    <title>Alchemist Civils & Equipment Rental | Professional Building Solutions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="icon" href="favicon.jpg" type="image/png">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #1A3E5F;
+            --secondary: #F5B301;
+            --accent: #E5E5E5;
+            --text: #222222;
+            --background: #FFFFFF;
+            --light-bg: #F8F8F8;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        /* Custom Scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--secondary) var(--light-bg);
+        }
+        
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 10px;
+            border: 3px solid var(--light-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e0a300;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--primary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #e0a300;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(245, 179, 1, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin: 30px;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 62, 95, 0.8), rgba(26, 62, 95, 0.8)), url('about-2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-bg);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 300px;
+            transition: transform 0.5s ease;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 62, 95, 0.85);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        /* Callout Section */
+        .callout {
+            background: linear-gradient(rgba(245, 179, 1, 0.9), rgba(245, 179, 1, 0.9)), url('https://images.unsplash.com/photo-1543652437-15ae836b33e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: var(--primary);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .callout h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .callout p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .callout .btn {
+            background: var(--primary);
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .callout .btn:hover {
+            background: #152c44;
+        }
+
+        /* Testimonials */
+         /* Testimonial Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .testimonials-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            padding: 20px 0;
+        }
+
+        .testimonial-card {
+            flex: 0 0 calc(33.333% - 30px);
+            margin: 0 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            transition: var(--transition);
+            position: relative;
+            opacity: 0.9;
+            transform: scale(0.95);
+        }
+
+        .testimonial-card.active {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-content {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .testimonial-content::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            font-size: 5rem;
+            color: var(--secondary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--secondary);
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: var(--secondary);
+            margin: 10px 0;
+        }
+
+        .rating i {
+            margin-right: 3px;
+        }
+
+        /* Navigation */
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin: 0 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-dot.active {
+            background: var(--secondary);
+            transform: scale(1.3);
+        }
+
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+
+        .nav-arrow:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .nav-arrow.left {
+            left: -25px;
+        }
+
+        .nav-arrow.right {
+            right: -25px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .testimonial-card {
+                flex: 0 0 calc(50% - 30px);
+            }
+            
+            .nav-arrow.left {
+                left: 10px;
+            }
+            
+            .nav-arrow.right {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 calc(100% - 30px);
+            }
+            
+            .testimonials-section {
+                padding: 60px 0;
+            }
+            
+            .nav-arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Contact Preview */
+        .contact-preview {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(245, 179, 1, 0.2);
+        }
+
+        .form-group textarea {
+            height: 120px;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+           
+        }
+
+         
+
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Equipment Animation */
+        .excavator {
+            position: absolute;
+            bottom: -10px;
+            right: 10%;
+            width: 300px;
+            height: 200px;
+            background-image: url('https://images.unsplash.com/photo-1620395458836-573c4d9a0cc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80');
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: moveExcavator 30s linear infinite;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        @keyframes moveExcavator {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .excavator {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: var(--transition);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .project-card {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 80vh;
+                min-height: 500px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .callout h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-preview {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-hard-hat logo-icon"></i>
+                Alchemist <span>Civils</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="quote.html">Contact</a></li>
+                    <li><a href="quote.html" class="btn">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="excavator"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Building The Future With Precision & Quality</h1>
+                <p>Professional construction services and equipment rental solutions for infrastructure, land development, and building projects.</p>
+                <a href="quote.html" class="btn">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Our Company</h2>
+                    <p>Alchemist
+Civils Construction & Equipment Rental has been a trusted name in the construction industry for over 15 years. Our team of skilled professionals is committed to delivering exceptional results on every project, big or small.</p>
+                    <p>We pride ourselves on our attention to detail, commitment to safety, and dedication to meeting project deadlines while maintaining the highest quality standards.</p>
+                    <a href="about.html" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction site with heavy equipment">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Infrastructure & Community Projects</h3>
+                    <p>Roads, bridges, utilities and public space development with community needs in mind.</p>
+                    <a href="services.html" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Land Preparation</h3>
+                    <p>Site clearing, grading, excavation and preparation for construction projects.</p>
+                    <a href="services.html" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Sub-structure & Superstructure</h3>
+                    <p>Foundation work and structural construction for residential and commercial buildings.</p>
+                    <a href="services.html" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-pickup"></i>
+                    </div>
+                    <h3>Equipment Rental</h3>
+                    <p>Excavators, loaders, bulldozers, and more for short or long-term projects.</p>
+                    <a href="services.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project 1.jpg" alt="Highway construction" class="project-image">
+                    <div class="project-overlay">
+                       
+                        <p>Site Clearing</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src= "project 2.jpg" alt="Residential complex" class="project-image">
+                    <div class="project-overlay">
+                        
+                        <p>Land Preparation</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="project 3.jpg" alt="Commercial building" class="project-image">
+                    <div class="project-overlay">
+                         
+                        <p>Rubble Removals From Site</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="project 4.jpg" alt="Community center" class="project-image">
+                    <div class="project-overlay">
+                        
+                        <p>Setting-out to Foundation</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="renting.jpg" alt="Industrial complex" class="project-image">
+                    <div class="project-overlay">
+                         
+                        <p>renting</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="project.html" class="btn">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Callout -->
+    <section class="callout">
+        <div class="container">
+            <h2>Equipment Rental Services</h2>
+            <p>We offer a wide range of well-maintained construction equipment for rent. From excavators to bulldozers, we have the machinery you need for your project.</p>
+            <a href="services.html#equipment" class="btn">Book Equipment Now</a>
+        </div>
+    </section>
+
+     <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            
+            <div class="testimonials-container">
+                <!-- Left Navigation Arrow -->
+                <div class="nav-arrow left">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                
+                <!-- Testimonials Track -->
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card active">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">As a Tipper Driver i think this is the best company i have worked for, they follow procedure on all their work. No shortcuts</p>
+                            <div class="testimonial-author">
+                                
+                                <div class="author-info">
+                                    <h4>Mike Mugova</h4>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">A company that keeps it's promise has won the customer,s heart and this is what #AlchemistCivils did. They kept their promise. Good job</p>
+                            <div class="testimonial-author">
+                                
+                                <div class="author-info">
+                                    <h4>Chris Khabo </h4> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="testimonial-text">They worked on time and I never had to follow up much on their work. It's as if they undercharged for a job very well done.</p>
+                            <div class="testimonial-author">
+                                
+                                <div class="author-info">
+                                    <h4>Farai Chimutasha</h4>
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">This company taught me the lesson to never judge a book by its cover. #Alchemist is an upcoming company but does the job like its been around for ages</p>
+                            <div class="testimonial-author">
+                                 
+                                <div class="author-info">
+                                    <h4>Howard Nyashega</h4>
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">At first I doubted but I got the results I wanted. Keep it up Alchemist</p>
+                            <div class="testimonial-author">
+                                
+                                <div class="author-info">
+                                    <h4>Tafadzwa Mutata</h4>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">They do the job good good</p>
+                            <div class="testimonial-author">
+                                
+                                <div class="author-info">
+                                    <h4>Johane Lorenzo Mashila</h4>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Navigation Arrow -->
+                <div class="nav-arrow right">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                
+                <!-- Navigation Dots -->
+                <div class="testimonial-nav">
+                    <div class="nav-dot active" data-index="0"></div>
+                    <div class="nav-dot" data-index="1"></div>
+                    <div class="nav-dot" data-index="2"></div>
+                    <div class="nav-dot" data-index="3"></div>
+                    <div class="nav-dot" data-index="4"></div>
+                    <div class="nav-dot" data-index="5"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Preview -->
+    <section class="contact-preview section" id="contact-preview">
+        <div class="container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>123 Construction Avenue, Building City, BC 12345</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>Phone Number</h4>
+                        <p>
+78 754 054</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email Address</h4>
+                        <p>info@buildproconstruction.com</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="contact-form">
+                <h3  id="contact">Quick Inquiry</h3>
+                <form id="inquiryForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+         
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023Alchemist Civils & Equipment Rental. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('#navMenu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Form submission
+        const inquiryForm = document.getElementById('inquiryForm');
+        if (inquiryForm) {
+            inquiryForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will contact you shortly.');
+                inquiryForm.reset();
+            });
+        }
+        
+   document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('testimonialsTrack');
+            const cards = document.querySelectorAll('.testimonial-card');
+            const dots = document.querySelectorAll('.nav-dot');
+            const arrowLeft = document.querySelector('.nav-arrow.left');
+            const arrowRight = document.querySelector('.nav-arrow.right');
+            
+            let currentIndex = 0;
+            const cardCount = cards.length;
+            
+            // Function to update testimonial positions
+            function updateTestimonials() {
+                // Calculate the transform value based on current index
+                const transformValue = -currentIndex * (cards[0].offsetWidth + 30); // 30 is the margin
+                track.style.transform = `translateX(${transformValue}px)`;
+                
+                // Update active card
+                cards.forEach((card, index) => {
+                    if (index === currentIndex) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+                
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Next testimonial
+            function nextTestimonial() {
+                currentIndex = (currentIndex + 1) % cardCount;
+                updateTestimonials();
+            }
+            
+            // Previous testimonial
+            function prevTestimonial() {
+                currentIndex = (currentIndex - 1 + cardCount) % cardCount;
+                updateTestimonials();
+            }
+            
+            // Event listeners for arrows
+            arrowRight.addEventListener('click', nextTestimonial);
+            arrowLeft.addEventListener('click', prevTestimonial);
+            
+            // Event listeners for dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    currentIndex = parseInt(this.getAttribute('data-index'));
+                    updateTestimonials();
+                });
+            });
+            
+            // Auto-advance testimonials
+            let autoScroll = setInterval(nextTestimonial, 5000);
+            
+            // Pause auto-scroll on hover
+            const testimonialsContainer = document.querySelector('.testimonials-container');
+            testimonialsContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoScroll);
+            });
+            
+            testimonialsContainer.addEventListener('mouseleave', () => {
+                autoScroll = setInterval(nextTestimonial, 5000);
+            });
+            
+            // Swipe support for touch devices
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            track.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            track.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    nextTestimonial();
+                }
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    prevTestimonial();
+                }
+            }
+            
+            // Initialize
+            updateTestimonials();
+            
+            // Responsive adjustments on window resize
+            window.addEventListener('resize', updateTestimonials);
+        });     
+        // Project card animation
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('.project-overlay').style.opacity = '1';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('.project-overlay').style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html>

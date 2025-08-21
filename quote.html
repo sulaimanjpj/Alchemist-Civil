@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote | Alchemist Civils</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="icon" href="favicon.jpg" type="image/png">
+    <style>
+        :root {
+            --primary: #1A3E5F;
+            --secondary: #F5B301;
+            --accent: #E5E5E5;
+            --text: #222222;
+            --background: #FFFFFF;
+            --light-bg: #F8F8F8;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: thin;
+            scrollbar-color: var(--secondary) var(--light-bg);
+        }
+        
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 10px;
+            border: 3px solid var(--light-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e0a300;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--primary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #e0a300;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(245, 179, 1, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Quote Hero Section */
+        .quote-hero {
+            background: linear-gradient(rgba(26, 62, 95, 0.85), rgba(26, 62, 95, 0.85)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .quote-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .quote-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Quote Process */
+        .process-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .process-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .process-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .process-number {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Quote Form Section */
+        .quote-section {
+            padding: 80px 0;
+        }
+
+        .quote-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .quote-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .quote-info h2 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .quote-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .info-text h4 {
+            margin-bottom: 5px;
+        }
+
+        .quote-form {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-title {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(245, 179, 1, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: var(--light-bg);
+            padding: 80px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            
+        }
+
+         
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .quote-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .quote-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: var(--transition);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .quote-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .quote-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .quote-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .quote-hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+            }
+            
+            .quote-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-hard-hat logo-icon"></i>
+                Alchemist <span> Civils</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+               <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="quote.html">Contact</a></li>
+                    <li><a href="quote.html" class="btn">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Quote Hero Section -->
+    <section class="quote-hero">
+        <div class="container hero-content">
+            <h1>Request a Quote</h1>
+            <p>Get a personalized estimate for your construction project. Our team will review your request and provide a detailed quote within 24 hours.</p>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Our Simple Quote Process</h2>
+            <div class="process-steps">
+                <div class="process-card animate delay-1">
+                    <div class="process-number">1</div>
+                    <div class="process-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Submit Request</h3>
+                    <p>Fill out our quote request form with your project details and requirements.</p>
+                </div>
+                
+                <div class="process-card animate delay-2">
+                    <div class="process-number">2</div>
+                    <div class="process-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Review Project</h3>
+                    <p>Our experts will review your project and assess requirements.</p>
+                </div>
+                
+                <div class="process-card animate delay-3">
+                    <div class="process-number">3</div>
+                    <div class="process-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Prepare Estimate</h3>
+                    <p>We'll prepare a detailed estimate based on your specifications.</p>
+                </div>
+                
+                <div class="process-card animate delay-4">
+                    <div class="process-number">4</div>
+                    <div class="process-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Receive Quote</h3>
+                    <p>Get your comprehensive quote within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-container">
+                <div class="quote-info">
+                    <h2>Get Your Project Started</h2>
+                    <p>Fill out the form to request a free, no-obligation quote for your construction project. Our team will review your information and contact you with a detailed estimate.</p>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Quick Response</h4>
+                            <p>Receive a quote within 24 business hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>No Obligation</h4>
+                            <p>Free estimates with no commitment required</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Expert Consultation</h4>
+                            <p>Get advice from our construction specialists</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-form">
+                    <h3 class="form-title">Request a Quote</h3>
+                    <form id="quoteForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Required *</label>
+                            <select id="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="infrastructure">Infrastructure Projects</option>
+                                <option value="land">Land Preparation</option>
+                                <option value="building">Building Construction</option>
+                                <option value="equipment">Equipment Rental</option>
+                                <option value="other">Other Service</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="projectType">Project Type *</label>
+                            <select id="projectType" required>
+                                <option value="">Select Project Type</option>
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="industrial">Industrial</option>
+                                <option value="municipal">Rental</option>
+                                <option value="municipal">other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="projectDetails">Project Details *</label>
+                            <textarea id="projectDetails" placeholder="Describe your project, including size, scope, and any specific requirements" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Project Location *</label>
+                            <input type="text" id="location" placeholder="Address or City" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startDate">Preferred Start Date</label>
+                                <input type="date" id="startDate">
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="heardAbout">How did you hear about us?</label>
+                            <select id="heardAbout">
+                                <option value="">Select an Option</option>
+                                <option value="search">Search Engine</option>
+                                <option value="social">Social Media</option>
+                                <option value="referral">Referral</option>
+                                <option value="ad">Advertisement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%; padding: 16px; font-size: 1.1rem;">Request Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Alchemist
+Civils</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Certified Professionals</h3>
+                    <p>Our team consists of licensed and certified construction experts with years of industry experience.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Competitive Pricing</h3>
+                    <p>We offer fair and transparent pricing without compromising on quality or safety.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Modern Equipment</h3>
+                    <p>State-of-the-art machinery and tools for efficient and precise construction work.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Fully Insured</h3>
+                    <p>Comprehensive insurance coverage for all projects, ensuring your peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Alchemist Civils & Equipment Rental. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('#navMenu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Form submission
+        const quoteForm = document.getElementById('quoteForm');
+        if (quoteForm) {
+            quoteForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Form validation
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const service = document.getElementById('service').value;
+                const projectType = document.getElementById('projectType').value;
+                const projectDetails = document.getElementById('projectDetails').value;
+                const location = document.getElementById('location').value;
+                
+                if (!firstName || !lastName || !email || !phone || !service || !projectType || !projectDetails || !location) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // In a real implementation, you would send this data to your server
+                // For this example, we'll just show a success message
+                
+                // Show success message
+                alert('Thank you for your quote request! We will contact you within 24 hours with your estimate.');
+                
+                // Reset form
+                quoteForm.reset();
+            });
+        }
+
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animateElements.forEach(element => {
+            element.style.animationPlayState = 'paused';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

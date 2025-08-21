@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Alchemist Civils</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.jpg" type="image/png">
+    <style>
+        :root {
+            --primary: #1A3E5F;
+            --secondary: #F5B301;
+            --accent: #E5E5E5;
+            --text: #222222;
+            --background: #FFFFFF;
+            --light-bg: #F8F8F8;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: thin;
+            scrollbar-color: var(--secondary) var(--light-bg);
+        }
+        
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 10px;
+            border: 3px solid var(--light-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e0a300;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--primary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #e0a300;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(245, 179, 1, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Services Hero Section */
+        .services-hero {
+            background: linear-gradient(rgba(26, 62, 95, 0.85), rgba(26, 62, 95, 0.85)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        /* Services Overview */
+        .services-overview {
+            background: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -40px auto 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-features {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+
+        /* Detailed Services */
+        .service-detail {
+            margin-bottom: 60px;
+        }
+
+        .detail-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .detail-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .detail-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Equipment Rental */
+        .equipment-rental {
+            background: var(--light-bg);
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .equipment-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .equipment-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .equipment-card:hover .equipment-image img {
+            transform: scale(1.05);
+        }
+
+        .equipment-info {
+            padding: 20px;
+        }
+
+        .equipment-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .spec-item i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+
+        .equipment-pricing {
+            background: var(--accent);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .price-tag {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Process Section */
+        .process-section {
+            text-align: center;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .process-card {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            background: white;
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .process-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .process-number {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(26, 62, 95, 0.9), rgba(26, 62, 95, 0.9)), url('https://images.unsplash.com/photo-1533158307587-828f0a76ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 20px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            
+        }
+
+         
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .services-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .detail-content {
+                flex-direction: column;
+            }
+            
+            .detail-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            z-index: 1001;
+            position: relative;
+            background: transparent;
+            border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: var(--transition);
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-card {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .services-hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .equipment-specs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="home.html" class="logo">
+                <i class="fas fa-hard-hat logo-icon"></i>
+                Alchemist  <span>  Civils</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="quote.html">Contact</a></li>
+                    <li><a href="quote.html" class="btn">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container hero-content">
+            <h1>Our Construction Services</h1>
+            <p>Comprehensive construction solutions and equipment rental services for projects of all sizes. Quality, safety, and efficiency guaranteed.</p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section services-overview">
+        <div class="container">
+            <h2 class="section-title">Our Comprehensive Services</h2>
+            <div class="services-grid">
+                <div class="service-card animate delay-1">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Infrastructure Projects">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Infrastructure & Community Projects</h3>
+                        <p>Roads, bridges, utilities and public space development with community needs in mind.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Road Construction</li>
+                            <li><i class="fas fa-check"></i> Bridge Building</li>
+                            <li><i class="fas fa-check"></i> Utility Installation</li>
+                            <li><i class="fas fa-check"></i> Public Space Development</li>
+                        </ul>
+                      
+                    </div>
+                </div>
+                
+                <div class="service-card animate delay-2">
+                    <div class="service-image">
+                        <img src="bulldozer.jpg" alt="Land Preparation">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Land Preparation</h3>
+                        <p>Site clearing, grading, excavation and preparation for construction projects.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Site Clearing</li>
+                            <li><i class="fas fa-check"></i> Grading & Leveling</li>
+                            <li><i class="fas fa-check"></i> Excavation</li>
+                            <li><i class="fas fa-check"></i> Soil Stabilization</li>
+                        </ul>
+                         
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                <div class="service-card animate delay-3">
+                    <div class="service-image">
+                        <img src="carousel-3.jpg" alt="Building Construction">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                   
+                                  
+                    <div class="service-content">
+                        <h3>Building Construction</h3>
+                        <p>Foundation work and structural construction for residential and commercial buildings.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Foundation Work</li>
+                            <li><i class="fas fa-check"></i> Structural Construction</li>
+                            <li><i class="fas fa-check"></i> Commercial Buildings</li>
+                            <li><i class="fas fa-check"></i> Residential Complexes</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Equipment Rental Section -->
+    <section class="section equipment-rental">
+        <div class="container">
+            <h2 class="section-title">Equipment Rental Services</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 50px;">We offer a wide range of well-maintained construction equipment for rent. All equipment comes with trained operators and full maintenance support.</p>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card animate delay-1">
+                    <div class="equipment-image">
+                        <img src="exavators.jpg" alt="Excavator">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Excavators</h3>
+                        <p>Heavy-duty excavators for digging, trenching, and material handling.</p>
+                       
+                       
+                        <a href="quote.html" class="btn" style="width: 100%; margin-top: 15px;">Rent Now</a>
+                    </div>
+                </div>
+                
+                <div class="equipment-card animate delay-2">
+                    <div class="equipment-image">
+                        <img src="bulldozer.jpg" alt="Bulldozer">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Bulldozers</h3>
+                        <p>Powerful bulldozers for grading, leveling, and earthmoving.</p>
+                        
+                         
+                        <a href="quote.html" class="btn" style="width: 100%; margin-top: 15px;">Rent Now</a>
+                    </div>
+                </div>
+                
+                <div class="equipment-card animate delay-3">
+                    <div class="equipment-image">
+                        <img src="cranes.jpg" alt="Crane">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Cranes</h3>
+                        <p>Tower and mobile cranes for heavy lifting and construction.</p>
+                         
+                        </div>
+                         
+                        <a href="quote.html" class="btn" style="width: 100%; margin-top: 15px;">Rent Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <h2 class="section-title">Our Service Process</h2>
+            <div class="process-steps">
+                <div class="process-card animate delay-1">
+                    <div class="process-number">1</div>
+                    <div class="process-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your project requirements, timeline, and budget.</p>
+                </div>
+                
+                <div class="process-card animate delay-2">
+                    <div class="process-number">2</div>
+                    <div class="process-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Planning</h3>
+                    <p>Our experts create a detailed project plan and timeline.</p>
+                </div>
+                
+                <div class="process-card animate delay-3">
+                    <div class="process-number">3</div>
+                    <div class="process-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Execution</h3>
+                    <p>We execute the project with precision and quality craftsmanship.</p>
+                </div>
+                
+                <div class="process-card animate delay-4">
+                    <div class="process-number">4</div>
+                    <div class="process-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Completion</h3>
+                    <p>We deliver the finished project and ensure your satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does a typical construction project take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Project timelines vary based on size and complexity. Small projects may take 2-4 weeks, while larger developments can take 6-18 months. During our initial consultation, we provide a detailed timeline for your specific project.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide both labor and materials?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer comprehensive turnkey services that include both labor and materials. We can also work with client-provided materials if preferred. Our quotes clearly outline what's included.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What areas do you serve?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We primarily serve the greater metropolitan area and surrounding regions. For large projects, we may consider locations further away. Contact us to discuss your specific location needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are you licensed and insured?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we are fully licensed, bonded, and insured. We carry comprehensive liability insurance and workers' compensation coverage for all our employees. Certificates are available upon request.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I get a quote for my project?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can request a quote through our online form, call us directly, or email your project details. We typically provide estimates within 1-2 business days after understanding your requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Get in touch with our team to discuss your construction needs. We're here to bring your vision to life with our expertise and dedication to quality.</p>
+                <a href="quote.html" class="btn">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+         
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Alchemist Civils & Equipment Rental. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('#navMenu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animateElements.forEach(element => {
+            element.style.animationPlayState = 'paused';
+            observer.observe(element);
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
